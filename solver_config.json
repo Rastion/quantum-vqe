@@ -7,20 +7,29 @@
         "n_shots": 10000,
         "verbose": false
     },
-    "optimizer_type": "VQE for QUBO problems",
-    "description": "Variational Quantum Eigensolver for QUBO problem. We use pennylane to construct the ansatz and optimize the quantum circuit.",
+    "creator": "Rastion",
+    "type": "optimizer",
+    "optimizer_name": "VQE optimizer with Ising parameters",
+    "description": "Variational Quantum Eigensolver with Ising parameters. We use pennylane to construct the ansatz and optimize the quantum circuit.",
     "compatible_problems": [
-      "QUBO"
+      "Ising"
     ],
-    
     "parameters": {
-      "time_limit": {
+      "num_layers": {
         "type": "int",
-        "description": "Maximum optimization time in seconds."
+        "description": "Number of layers for the QAOA quantum circuit."
       },
-      "temperature": {
+      "max_iters": {
         "type": "int",
-        "description": "Starting temperature for the annealing process."
+        "description": "maximum number of iterations for the Adam optimizer."
+      },
+      "learning_rate": {
+        "type": "bool",
+        "description": "Learning rate for pennylane Adam optimizer."
+      },
+      "n_shots": {
+        "type": "int",
+        "description": "Number of shots for the quantum simulator/circuit."
       },
       "verbose": {
         "type": "bool",
@@ -33,9 +42,8 @@
       "numpy"
     ],
     "keywords": [
-      "QUBO",
-      "heuristic",
-      "general QUBO solver"
+      "Ising",
+      "quantum optimizers"
     ]
 }
 

@@ -13,9 +13,9 @@ class VQEOptimizer(BaseOptimizer):
 
     def optimize(self, problem, initial_solution=None, **kwargs):
         # Retrieve Ising parameters directly from problem
-        h_dict, J_dict, offset, edges = problem.get_ising()
+        h_dict, J_dict, offset, edges = problem.h, problem.J, problem.offset, problem.edges
 
-        n = problem.nb_cities * problem.nb_cities
+        n = len(h_dict)
 
         coeffs = []
         obs = []
